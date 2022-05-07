@@ -14,6 +14,7 @@ const options = {
     deadline = getDeadline(selectedDates);
   },
 };
+
 flatpickr(inputDate, options);
 
 startBtn.setAttribute('disabled', true);
