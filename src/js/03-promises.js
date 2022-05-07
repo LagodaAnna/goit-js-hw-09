@@ -24,6 +24,7 @@ function createArrayOfPromises() {
   let delayTime = Number(options.firstDelay);
   for (let i = 1; i <= options.amount; i++) {
     let positionNumber = i;
+
     createPromise(positionNumber, delayTime)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -31,6 +32,7 @@ function createArrayOfPromises() {
       .catch(({ position, delay }) => {
         Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
       });
+
     delayTime += Number(options.delayStep);
   }
 }
